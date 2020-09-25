@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MEEGA+
 
 Repositório para o projeto de informatização do sistema MEEGA+ (*Model for the Evaluation of Educational GAmes*, o + é para sinalizar uma versão atualizada da primeira versão). Que foi um sistema desenvolvido para avaliar a qualidade de jogos educacionais para o ensino de Engenharia de Software.
