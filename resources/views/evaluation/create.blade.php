@@ -15,12 +15,34 @@
             @csrf
             <input type="hidden" name="evaluator_id" value="{{ Auth::user()->id }}" >
             <div class="form-group">
+              <label for="game_name">Nome do jogo:</label>
+              <input type="text" class="form-control  @error('game_name') is-invalid @enderror" name="game_name" placeholder="Nome do jogo: ">
+              @error('game_name')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
+            </div>
+            <div class="form-group">
               <label>Questionário:</label>
               <select class="form-control" name="standard_questionnaire_id" id="questionnaire">
                 @foreach ($questionnaires as $questionnaire)
                   <option class="form-control" value="{{ $questionnaire->id }}">{{ $questionnaire->name }}</option>
                 @endforeach
               </select>
+            </div>
+            <div class="form-group">
+              <label>Nível de ensino:</label>
+              <select class="form-control" name="level_of_education_id" id="level">
+                @foreach ($levels as $level)
+                  <option class="form-control" value="{{ $level->id }}">{{ $level->name }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="course">Área de Conhecimento:</label>
+              <input id="course" type="text" class="form-control  @error('course') is-invalid @enderror" name="knowledge_area" placeholder=" ">
+              @error('course')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="course">Curso:</label>
@@ -50,13 +72,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
-            <div class="form-group">
-              <label for="game_name">Nome do jogo:</label>
-              <input type="text" class="form-control  @error('game_name') is-invalid @enderror" name="game_name" placeholder="Nome do jogo: ">
-              @error('game_name')
-                <div class="alert alert-danger">{{ $message }}</div>
-              @enderror
-            </div>
+            
             <div class="form-group">
               <label for="date">Data:</label>
               <input id="date" type="date" class="form-control  @error('date') is-invalid @enderror" name="date" placeholder="Data: ">

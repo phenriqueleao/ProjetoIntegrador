@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Evaluation;
 use App\Evaluator;
 use App\ExtraQuestionnaireItem;
+use App\LevelOfEducation;
 use App\StandardQuestionnaire;
 use App\StandardQuestionnaireItem;
 use App\Student;
@@ -37,11 +38,13 @@ class EvaluationController extends Controller
         $evaluations = Evaluation::all();
         $questionnaire = StandardQuestionnaire::all();
         $evaluator = Evaluator::all();
+        $levels = LevelOfEducation::all();
         
         return view('evaluation\create', [
             'evaluations' => $evaluations,
             'questionnaires' => $questionnaire,
-            'evaluators' => $evaluator
+            'evaluators' => $evaluator,
+            'levels' => $levels,
         ]);
     }
 
@@ -106,8 +109,9 @@ class EvaluationController extends Controller
         };
         
         $questionnaires = StandardQuestionnaire::all();
+        $levels = LevelOfEducation::all();
 
-        return view('evaluation\edit', compact('evaluation'))->with('questionnaires', $questionnaires);
+        return view('evaluation\edit', compact('evaluation'))->with('questionnaires', $questionnaires)->with('levels', $levels);
     }
 
     /**

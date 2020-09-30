@@ -20,6 +20,9 @@ class CreateEvaluationsTable extends Migration
             $table->string('discipline', 255);
             $table->string('institution', 255);
             $table->string('game_name', 255);
+            $table->string('knowledge_area', 255);
+            $table->bigInteger('level_of_education_id');
+            $table->foreign('level_of_education_id')->references('id')->on('level_of_education')->onDelete('cascade');
             $table->bigInteger('evaluator_id')->unsigned();
             $table->foreign('evaluator_id')->references('id')->on('evaluators')->onDelete('cascade');
             $table->bigInteger('standard_questionnaire_id')->unsigned();

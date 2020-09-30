@@ -83,5 +83,6 @@ Route::group([
     'middleware' => ['auth:admin,evaluator,student'],
 ], function () {
     Route::resource('/evaluation', 'EvaluationController');
+    Route::resource('/level', 'LevelOfEducationController');
 });
 
