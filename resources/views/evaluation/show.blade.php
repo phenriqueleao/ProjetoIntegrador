@@ -7,7 +7,13 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header h3">Avaliação: {{ $evaluation->game_name }}</div>
+        <div class="card-header">
+          <div class="h4">Avaliação: {{ $evaluation->game_name }}</div>
+          <div class="h5">Instituição: {{ $evaluation->institution }}</div>
+          <div class="h5">Curso: {{ $evaluation->course }}</div>
+          <div class="h5">Disciplina: {{ $evaluation->discipline }}</div>
+          <div class="h5">Turma: {{ $evaluation->class }}</div>
+        </div>
         <div class="card-body">
   
         @foreach ($standardquestions as $key => $standardquestion)
