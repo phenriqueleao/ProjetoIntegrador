@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
               <label for="course">Área de Conhecimento:</label>
-              <input id="course" type="text" class="form-control  @error('course') is-invalid @enderror" name="knowledge_area" placeholder=" ">
+              <input id="course" type="text" class="form-control  @error('course') is-invalid @enderror" name="knowledge_area" placeholder="Ciência da Computação, Matemática, etc...">
               @error('course')
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
