@@ -4,6 +4,9 @@
 
 @section('content')
     <div class="row">
-        <p class="h2 mx-auto m-5">Entre em contato através do e-mail: meega+@gmail.com</p>
+        <h3 class="mx-auto m-5">Para maiores informações sobre o MEEGA+ contate o seguinte e-mail:</h3>
+    </div>
+    <div class="row">
+        <h3 class="mx-auto"><a href="mailto:meegaplus@gmail.com">meegaplus@gmail.com</a></h3>
     </div>
 @endsection
